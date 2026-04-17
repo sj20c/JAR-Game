@@ -135,6 +135,15 @@ export function useGameState(
     pressStartRef.current = null;
   }, []);
 
+  const resetToReady = useCallback(() => {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    stateRef.current = null;
+    pressingRef.current = false;
+    pressStartRef.current = null;
+    setScore(0);
+    setPhase('ready');
+  }, []);
+
   // cleanup
   useEffect(() => {
     return () => {
@@ -146,6 +155,7 @@ export function useGameState(
     phase,
     score,
     startGame,
+    resetToReady,
     handlePressDown,
     handlePressUp,
   };

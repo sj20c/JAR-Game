@@ -1,0 +1,17 @@
+{
+  "name": "JAR",
+  "short_name": "JAR",
+  "description": "장애물을 피해 최고 기록을 세우는 점프 게임",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#f8f9fa",
+  "icons": [
+    {
+      "src": "/JAR_logo.png",
+      "sizes": "600x600",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

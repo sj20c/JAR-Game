@@ -5,9 +5,10 @@ interface Props {
   bestScore: number;
   isNewBest: boolean;
   onRestart: () => void;
+  onHome: () => void;
 }
 
-const GameOverModal: React.FC<Props> = ({ score, bestScore, isNewBest, onRestart }) => (
+const GameOverModal: React.FC<Props> = ({ score, bestScore, isNewBest, onRestart, onHome }) => (
   <div style={styles.container}>
     <div style={styles.badge}>게임 종료</div>
     <div style={styles.title}>끝!</div>
@@ -24,6 +25,9 @@ const GameOverModal: React.FC<Props> = ({ score, bestScore, isNewBest, onRestart
     </div>
     <button style={styles.btn} onPointerDown={(e) => { e.stopPropagation(); onRestart(); }}>
       다시 하기
+    </button>
+    <button style={styles.homeBtn} onPointerDown={(e) => { e.stopPropagation(); onHome(); }}>
+      처음 화면으로
     </button>
   </div>
 );
@@ -99,6 +103,17 @@ const styles: Record<string, React.CSSProperties> = {
     fontWeight: 700,
     cursor: 'pointer',
     borderRadius: 14,
+    fontFamily: 'inherit',
+  },
+  homeBtn: {
+    marginTop: 14,
+    background: 'transparent',
+    color: '#aeb7c2',
+    border: 'none',
+    padding: '8px 12px',
+    fontSize: 12,
+    fontWeight: 600,
+    cursor: 'pointer',
     fontFamily: 'inherit',
   },
 };

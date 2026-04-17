@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const [isNewBest, setIsNewBest] = useState(false);
   const [finalScore, setFinalScore] = useState(0);
 
-  const { phase, score, startGame, handlePressDown, handlePressUp } = useGameState(
+  const { phase, score, startGame, resetToReady, handlePressDown, handlePressUp } = useGameState(
     canvasRef,
     spriteImgs,
   );
@@ -58,6 +58,7 @@ const App: React.FC = () => {
             bestScore={bestScore}
             isNewBest={isNewBest}
             onRestart={handleStart}
+            onHome={resetToReady}
           />
         </>
       )}
